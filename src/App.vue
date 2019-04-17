@@ -19,8 +19,8 @@ export default {
   name: "app",
   components: {
     "app-header": Header,
-    "app-nav": Nav,
-    "app-content": Content
+    "app-nav": Nav
+    // "app-content": Content
   },
   data() {
     return {
