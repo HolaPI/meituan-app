@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 /dist
+mt-app
+resource
 
 # local env files
 .env.local

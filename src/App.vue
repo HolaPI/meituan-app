@@ -1,28 +1,45 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- header -->
+    <app-header :poiInfo="poiInfo"></app-header>
+    <!-- navigator -->
+    <app-nav></app-nav>
+    <router-view></router-view>
+    <!-- content -->
+    <!-- <app-content></app-content> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/header/Header.vue";
+import Nav from "./components/nav/Nav.vue";
+import Content from "./components/content/Content.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    "app-header": Header,
+    "app-nav": Nav,
+    "app-content": Content
+  },
+  data() {
+    return {
+      poiInfo: {}
+    };
+  },
+  created() {
+    fetch("/mock/goods.json")
+      .then(res => {
+        return res.json();
+      })
+      .then(response => {
+        if (response.code == 0) {
+          this.poiInfo = response.data.poi_info;
+        }
+      });
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
