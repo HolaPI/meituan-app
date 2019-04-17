@@ -3,10 +3,7 @@
     <!-- categories -->
     <div class="menu-wrapper" ref="menuScroll">
       <ul>
-        <li class="menu-item" 
-        :class="{'current': currentIndex === 0}"
-        @click="selectMenu(0)"
-        >
+        <li class="menu-item" :class="{'current': currentIndex === 0}" @touchend="selectMenu(0)">
           <p class="text">
             <img class="icon" :src="container.tag_icon" v-if="container.tag_icon">
             {{container.tag_name}}
@@ -17,7 +14,7 @@
           :class="{'current': currentIndex === index + 1}"
           v-for="(item, index) in goods"
           :key="index"
-          @click="selectMenu(index + 1)"
+          @touchend="selectMenu(index + 1)"
         >
           <p class="text">
             <img class="icon" :src="item.icon" v-if="item.icon">
@@ -103,8 +100,13 @@ export default {
       // console.log(foodList);
       // console.log(this.listHeight);
     },
-    selectMenu(index){
-      console.log(index)
+    selectMenu(index) {
+      let foodList = this.$refs.foodScroll.getElementsByClassName(
+        "food-list-hook"
+      );
+      let element = foodList[index];
+      this.foodScroll.scrollToElement(element, 250);
+      // console.log(index);
     }
   },
   computed: {
@@ -117,7 +119,6 @@ export default {
           (this.scrollY >= this.listHeight[i] &&
             this.scrollY < this.listHeight[i + 1])
         ) {
-          console.log(i);
           return i;
         }
       }
