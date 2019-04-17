@@ -1,0 +1,77 @@
+<template>
+  <div class="cartcontrol">
+    <div class="cart-decrease icon-remove_circle_outline" @touchend="decreaseCart"></div>
+    <div class="cart-count" v-show="food.count">{{food.count}}</div>
+    <div class="cart-add icon-add_circle" @touchend="increaseCart">
+      <i class="bg"></i>
+    </div>
+  </div>
+</template>
+
+<script>
+import Vue from "vue";
+export default {
+  props: {
+    food: {
+      type: Object
+    }
+  },
+  methods: {
+    decreaseCart() {
+      Vue.set(this.food, "count");
+    },
+    increaseCart() {
+      Vue.set(this.food, "count", 1);
+      this.count++;
+    }
+  }
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.cartcontrol {
+  font-size: 0;
+}
+.cartcontrol .cart-decrease {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  font-size: 26px;
+  color: #b4b4b4;
+}
+.cartcontrol .cart-count {
+  display: inline-block;
+  width: 25px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 26px;
+  vertical-align: top;
+}
+.cartcontrol .cart-add {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  font-size: 26px;
+  color: #ffd161;
+  position: relative;
+}
+.cartcontrol .cart-add .bg {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #000;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  z-index: -1;
+}
+.move-enter-active,
+.move-leave-active {
+  transition: all 0.5s linear;
+}
+.move-enter,
+.move-leave-to {
+  transform: translateX(20px) rotate(180deg);
+}
+</style>

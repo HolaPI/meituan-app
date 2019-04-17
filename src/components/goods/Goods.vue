@@ -52,26 +52,38 @@
                   <span class="unit">/{{food.unit}}</span>
                 </p>
               </div>
+              <div class="cartcontrol-wrapper">
+                <app-cart-control :food="food"></app-cart-control>
+              </div>
             </li>
           </ul>
         </li>
       </ul>
     </div>
+    <!-- shopping cart -->
+    <app-shopcart :poiInfo="poiInfo"></app-shopcart>
   </div>
 </template>
 
 <script>
 import BScroll from "better-scroll";
+import Shopcart from "../shopcart/Shopcart.vue";
+import CartControl from "../cartcontrol/CartControl.vue";
 export default {
   data() {
     return {
       container: {},
       goods: [],
+      poiInfo: {},
       listHeight: [],
       menuScroll: {},
       foodScroll: {},
       scrollY: 0
     };
+  },
+  components: {
+    "app-shopcart": Shopcart,
+    "app-cart-control": CartControl
   },
   methods: {
     head_bg(imgName) {
@@ -79,7 +91,10 @@ export default {
     },
     initScroll() {
       this.menuScroll = new BScroll(this.$refs.menuScroll);
-      this.foodScroll = new BScroll(this.$refs.foodScroll, { probeType: 3 });
+      this.foodScroll = new BScroll(this.$refs.foodScroll, {
+        probeType: 3,
+        touchend: true
+      });
       //listen foodscroll scorll-event
       this.foodScroll.on("scroll", pos => {
         this.scrollY = Math.abs(Math.round(pos.y));
@@ -134,6 +149,7 @@ export default {
         if (response.code == 0) {
           this.container = response.data.container_operation_source;
           this.goods = response.data.food_spu_tags;
+          this.poiInfo = response.data.poi_info;
           this.$nextTick(() => {
             this.initScroll();
             this.calculateHeight();
