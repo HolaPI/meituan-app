@@ -89,7 +89,8 @@ export default {
   data() {
     return {
       ratings: {},
-      selectType: 0
+      //set type "ALL" initially, or occurs errors
+      selectType: ALL
     };
   },
   computed: {
