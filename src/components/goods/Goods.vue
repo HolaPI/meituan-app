@@ -20,6 +20,7 @@
             <img class="icon" :src="item.icon" v-if="item.icon">
             {{item.name}}
           </p>
+          <i class="num" v-show="calculateCount(item.spus)">{{calculateCount(item.spus)}}</i>
         </li>
       </ul>
     </div>
@@ -61,7 +62,7 @@
       </ul>
     </div>
     <!-- shopping cart -->
-    <app-shopcart :poiInfo="poiInfo"></app-shopcart>
+    <app-shopcart :poiInfo="poiInfo" :selectFoods="selectFoods"></app-shopcart>
   </div>
 </template>
 
@@ -122,6 +123,15 @@ export default {
       let element = foodList[index];
       this.foodScroll.scrollToElement(element, 250);
       // console.log(index);
+    },
+    calculateCount(spus) {
+      let count = 0;
+      spus.forEach(food => {
+        if (food.count > 0) {
+          count += food.count;
+        }
+      });
+      return count;
     }
   },
   computed: {
@@ -138,6 +148,18 @@ export default {
         }
       }
       return 0;
+    },
+    selectFoods() {
+      let foods = [];
+      this.goods.forEach(myfood => {
+        myfood.spus.forEach(food => {
+          //when item has been added in cart
+          if (food.count > 0) {
+            foods.push(food);
+          }
+        });
+      });
+      return foods;
     }
   },
   created() {
@@ -181,6 +203,7 @@ export default {
 .goods .menu-wrapper .menu-item {
   padding: 16px 23px 15px 10px;
   border-bottom: 1px solid #e4e4e4;
+  position: relative;
 }
 .goods .menu-wrapper .menu-item .text {
   font-size: 13px;

@@ -1,7 +1,16 @@
 <template>
   <div class="cartcontrol">
-    <div class="cart-decrease icon-remove_circle_outline" @touchend="decreaseCart"></div>
-    <div class="cart-count" v-show="food.count">{{food.count}}</div>
+    <transition name="move">
+      <div
+        class="cart-decrease icon-remove_circle_outline"
+        v-show="food.count"
+        @touchend="decreaseCart"
+      ></div>
+    </transition>
+    <transition name="count">
+      <div class="cart-count" v-show="food.count">{{food.count}}</div>
+    </transition>
+
     <div class="cart-add icon-add_circle" @touchend="increaseCart">
       <i class="bg"></i>
     </div>
@@ -9,7 +18,7 @@
 </template>
 
 <script>
-import Vue from "vue";
+// import Vue from "vue";
 export default {
   props: {
     food: {
@@ -18,11 +27,19 @@ export default {
   },
   methods: {
     decreaseCart() {
-      Vue.set(this.food, "count");
+      if (this.food.count > 0) {
+        this.food.count--;
+      } else {
+        this.$delete(this.food, "count");
+      }
     },
     increaseCart() {
-      Vue.set(this.food, "count", 1);
-      this.count++;
+      if (!this.food.count) {
+        // Vue.set(this.food, "count", 1);
+        this.$set(this.food, "count", 1);
+      } else {
+        this.food.count++;
+      }
     }
   }
 };
@@ -68,10 +85,16 @@ export default {
 }
 .move-enter-active,
 .move-leave-active {
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
 }
 .move-enter,
 .move-leave-to {
-  transform: translateX(20px) rotate(180deg);
+  transform: translateX(26px) rotate(180deg);
+}
+.count-enter-active {
+  transition: all 0.2s linear;
+}
+.count-enter {
+  transform: translateX(13px);
 }
 </style>
