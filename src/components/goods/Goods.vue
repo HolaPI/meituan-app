@@ -38,7 +38,12 @@
           <h3 class="title">{{item.name}}</h3>
           <!-- details -->
           <ul>
-            <li class="food-item" v-for="(food, index) in item.spus" :key="index">
+            <li
+              class="food-item"
+              v-for="(food, index) in item.spus"
+              :key="index"
+              @touchend="showDetail(food)"
+            >
               <div class="icon" :style="head_bg(food.picture)"></div>
               <div class="content">
                 <h3 class="name">{{food.name}}</h3>
@@ -63,6 +68,8 @@
     </div>
     <!-- shopping cart -->
     <app-shopcart :poiInfo="poiInfo" :selectFoods="selectFoods"></app-shopcart>
+    <!-- product-detail -->
+    <app-product-detail :food="selectFood" ref="foodView"></app-product-detail>
   </div>
 </template>
 
@@ -70,6 +77,7 @@
 import BScroll from "better-scroll";
 import Shopcart from "../shopcart/Shopcart.vue";
 import CartControl from "../cartcontrol/CartControl.vue";
+import ProductDetail from "../productDetail/ProductDetail.vue";
 export default {
   data() {
     return {
@@ -79,12 +87,14 @@ export default {
       listHeight: [],
       menuScroll: {},
       foodScroll: {},
-      scrollY: 0
+      scrollY: 0,
+      selectFood: {}
     };
   },
   components: {
     "app-shopcart": Shopcart,
-    "app-cart-control": CartControl
+    "app-cart-control": CartControl,
+    "app-product-detail": ProductDetail
   },
   methods: {
     head_bg(imgName) {
@@ -132,6 +142,10 @@ export default {
         }
       });
       return count;
+    },
+    showDetail(food) {
+      this.selectFood = food;
+      this.$refs.foodView.showView();
     }
   },
   computed: {

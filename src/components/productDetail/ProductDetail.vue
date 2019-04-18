@@ -1,0 +1,213 @@
+<template>
+  <transition name="food-detail">
+    <div class="food" v-show="showFlag" ref="foodDetail">
+      <div class="food-wrapper">
+        <div class="food-content">
+          <div class="img-wrapper">
+            <img :src="food.picture" class="food-img">
+            <span class="close-bt icon-close" @touchend="closeView"></span>
+            <img src="./img/share.png" class="share-bt">
+            <img src="./img/more.png" class="more-bt">
+          </div>
+          <div class="content-wrapper">
+            <h3 class="name">{{food.name}}</h3>
+            <p class="saled">{{food.month_saled_content}}</p>
+            <img
+              :src="food.product_label_picture"
+              class="product"
+              v-show="food.product_label_picture"
+            >
+            <p class="price">
+              <span class="text">¥{{food.min_price}}</span>
+              <span class="unit">/{{food.unit}}</span>
+            </p>
+            <div class="cartcontrol-wrapper">
+              <app-cart-control :food="food"></app-cart-control>
+            </div>
+            <div class="buy" @touchend="addFood" v-show="!food.count || food.count == 0">选规格</div>
+          </div>
+        </div>
+        <!-- separator -->
+        <app-split></app-split>
+        <!-- food comments -->
+        <div class="rating-wrapper">
+          <div class="rating-title">
+            <div class="like-ratio">
+              <span class="title">{{food.rating.title}}</span>
+              <span class="ratio">
+                (
+                {{food.rating.like_ratio_desc}}
+                <i>{{food.rating.like_ratio}}</i>
+                )
+              </span>
+            </div>
+            <div class="snd-title">
+              <span class="text">{{food.rating.snd_title}}</span>
+              <span class="icon icon-keyboard_arrow_right"></span>
+            </div>
+          </div>
+          <ul class="rating-content">
+            <li class="comment-item" v-for="(comment, index) in food.comment_list" :key="index">
+              <div class="comment-header">
+                <img :src="comment.user_icon" v-if="comment.user_icon">
+                <img src="./img/anonymity.png" v-if="!comment.user_icon">
+              </div>
+              <div class="comment-main">
+                <div class="user"></div>
+                <div class="time"></div>
+                <div class="content"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </transition>
+</template>
+
+<script>
+import BScroll from "better-scroll";
+import CartControl from "../cartcontrol/CartControl.vue";
+import Split from "../split/Split.vue";
+export default {
+  data() {
+    return {
+      showFlag: false
+    };
+  },
+  components: {
+    "app-cart-control": CartControl,
+    "app-split": Split
+  },
+  props: {
+    food: {
+      type: Object
+    }
+  },
+  methods: {
+    showView() {
+      this.showFlag = true;
+      this.$nextTick(() => {
+        if (!this.scroll) {
+          this.scroll = new BScroll(this.$refs.foodDetail, { touchend: true });
+        } else {
+          this.scroll.refresh();
+        }
+      });
+    },
+    closeView() {
+      this.showFlag = false;
+    },
+    addFood() {
+      this.$set(this.food, "count", 1);
+    }
+  }
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.food {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 51px;
+  background: #fff;
+  width: 100%;
+  z-index: 90;
+}
+.food-detail-enter-active,
+.food-detail-leave-active {
+  transition: 0.6s;
+}
+.food-detail-enter,
+.food-detail-leave-to {
+  transform: translateX(100%);
+}
+.food .food-wrapper .food-content .img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+}
+.food .food-wrapper .food-content .img-wrapper .food-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.food .food-wrapper .food-content .img-wrapper .close-bt {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+  background: #7f7f7f;
+  border-radius: 50%;
+}
+.food .food-wrapper .food-content .img-wrapper .share-bt,
+.food .food-wrapper .food-content .img-wrapper .more-bt {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+}
+.food .food-wrapper .food-content .img-wrapper .share-bt {
+  right: 50px;
+}
+.food .food-wrapper .food-content .img-wrapper .more-bt {
+  right: 10px;
+}
+.food .food-wrapper .food-content .content-wrapper {
+  padding: 0 0 16px 16px;
+  position: relative;
+}
+.food .food-wrapper .food-content .content-wrapper .name {
+  font-size: 15px;
+  color: #333;
+  line-height: 30px;
+  font-weight: bold;
+}
+.food .food-wrapper .food-content .content-wrapper .saled {
+  font-size: 11px;
+  color: #9d9d9d;
+  margin-bottom: 6px;
+}
+.food .food-wrapper .food-content .content-wrapper .product {
+  height: 15px;
+  margin-bottom: 16px;
+}
+.food .food-wrapper .food-content .content-wrapper .price {
+  font-size: 0;
+}
+.food .food-wrapper .food-content .content-wrapper .price .text {
+  font-size: 17px;
+  color: #fb4e44;
+}
+.food .food-wrapper .food-content .content-wrapper .price .unit {
+  font-size: 11px;
+  color: #9d9d9d;
+}
+.food .food-wrapper .food-content .cartcontrol-wrapper {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  padding: 2px;
+}
+.food .food-wrapper .food-content .buy {
+  width: 64px;
+  height: 30px;
+  font-size: 12px;
+  line-height: 30px;
+  text-align: center;
+  background: #ffd161;
+  border-radius: 30px;
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+}
+</style>

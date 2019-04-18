@@ -4,14 +4,14 @@
       <div
         class="cart-decrease icon-remove_circle_outline"
         v-show="food.count"
-        @touchend="decreaseCart"
+        @touchend.stop.prevent="decreaseCart"
       ></div>
     </transition>
     <transition name="count">
       <div class="cart-count" v-show="food.count">{{food.count}}</div>
     </transition>
 
-    <div class="cart-add icon-add_circle" @touchend="increaseCart">
+    <div class="cart-add icon-add_circle" @touchend.stop.prevent="increaseCart">
       <i class="bg"></i>
     </div>
   </div>
