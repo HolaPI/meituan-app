@@ -30,9 +30,10 @@
         <!-- separator -->
         <app-split></app-split>
         <!-- food comments -->
-        <div class="rating-wrapper">
+        <div class="rating-wrapper" v-if="food.rating">
           <div class="rating-title">
             <div class="like-ratio">
+              <!-- must confirm the existence of food.rating firstly before using food.rating.* -->
               <span class="title">{{food.rating.title}}</span>
               <span class="ratio">
                 (
@@ -47,15 +48,19 @@
             </div>
           </div>
           <ul class="rating-content">
-            <li class="comment-item" v-for="(comment, index) in food.comment_list" :key="index">
+            <li
+              class="comment-item"
+              v-for="(comment, index) in food.rating.comment_list"
+              :key="index"
+            >
               <div class="comment-header">
                 <img :src="comment.user_icon" v-if="comment.user_icon">
                 <img src="./img/anonymity.png" v-if="!comment.user_icon">
               </div>
               <div class="comment-main">
-                <div class="user"></div>
-                <div class="time"></div>
-                <div class="content"></div>
+                <div class="user">{{comment.user_name}}</div>
+                <div class="time">{{comment.comment_time}}</div>
+                <div class="content">{{comment.comment_content}}</div>
               </div>
             </li>
           </ul>
@@ -209,5 +214,70 @@ export default {
   position: absolute;
   right: 12px;
   bottom: 10px;
+}
+.food .food-wrapper .rating-wrapper {
+  padding-left: 16px;
+}
+.food .food-wrapper .rating-wrapper .rating-title {
+  padding: 16px 16px 16px 0;
+}
+.food .food-wrapper .rating-wrapper .rating-title .like-ratio {
+  float: left;
+  font-size: 0;
+}
+.food .food-wrapper .rating-wrapper .rating-title .like-ratio .title {
+  font-size: 13px;
+}
+.food .food-wrapper .rating-wrapper .rating-title .like-ratio .ratio {
+  font-size: 11px;
+}
+.food .food-wrapper .rating-wrapper .rating-title .like-ratio .ratio i {
+  color: #fb4e44;
+  font-size: 11px;
+}
+.food .food-wrapper .rating-wrapper .rating-title .snd-title {
+  float: right;
+  font-size: 0;
+}
+.food .food-wrapper .rating-wrapper .rating-title .snd-title .text,
+.food .food-wrapper .rating-wrapper .rating-title .snd-title .icon {
+  font-size: 13px;
+  color: #9d9d9d;
+  display: inline-block;
+}
+.food .food-wrapper .rating-wrapper .rating-title .snd-title .icon {
+  margin-left: 12px;
+}
+.food .food-wrapper .rating-wrapper .comment-item {
+  padding: 15px 14px 17px 0;
+  border-bottom: 1px solid #f4f4f4;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+.food .food-wrapper .rating-wrapper .comment-item .comment-header {
+  flex: 0 0 41px;
+  margin-right: 10px;
+}
+.food .food-wrapper .rating-wrapper .comment-item .comment-header img {
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+}
+.food .food-wrapper .rating-wrapper .comment-item .comment-main {
+  flex: 1;
+  margin-top: 6px;
+}
+.food .food-wrapper .rating-wrapper .comment-item .comment-main .time {
+  width: 50%;
+  float: right;
+  text-align: right;
+  font-size: 10px;
+  color: #666;
+}
+.food .food-wrapper .rating-wrapper .comment-item .comment-main .content {
+  margin-top: 17px;
+  font-size: 13px;
+  line-height: 19px;
 }
 </style>
