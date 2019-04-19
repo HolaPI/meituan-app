@@ -30,7 +30,7 @@
 				"sequence": 3
 			}
 		],
-		"app_delivery_tip": "由 商家 提供配送服务",
+		"app_delivery_tip": "由商家提供配送服务",
 		"warn_tips": "",
 		"support_pay": 1,
 		"invoice_support": 1,
@@ -43,12 +43,14 @@
 				"value": "4.7",
 				"unit": "分",
 				"is_score": true
-			}, {
+			},
+			{
 				"name": "平均速度",
 				"value": "30",
 				"unit": "分钟",
 				"is_score": false
-			}, {
+			},
+			{
 				"name": "及时送达",
 				"value": "100",
 				"unit": "%",

@@ -4,7 +4,10 @@
     <app-header :poiInfo="poiInfo"></app-header>
     <!-- navigator -->
     <app-nav :commentNum="commentNum"></app-nav>
-    <router-view></router-view>
+    <!-- keepalive to keep last status -->
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
     <!-- content -->
     <!-- <app-content></app-content> -->
   </div>
@@ -13,14 +16,12 @@
 <script>
 import Header from "./components/header/Header.vue";
 import Nav from "./components/nav/Nav.vue";
-import Content from "./components/content/Content.vue";
 
 export default {
   name: "app",
   components: {
     "app-header": Header,
     "app-nav": Nav
-    // "app-content": Content
   },
   data() {
     return {

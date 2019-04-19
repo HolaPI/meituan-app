@@ -101,7 +101,9 @@ export default {
       return "background-image: url(" + imgName + ");";
     },
     initScroll() {
-      this.menuScroll = new BScroll(this.$refs.menuScroll);
+      this.menuScroll = new BScroll(this.$refs.menuScroll, {
+        touchend: true
+      });
       this.foodScroll = new BScroll(this.$refs.foodScroll, {
         probeType: 3,
         touchend: true
