@@ -204,8 +204,9 @@ export default {
   padding: 2px;
 }
 .food .food-wrapper .food-content .buy {
-  width: 64px;
+  /* width: 64px; */
   height: 30px;
+  padding: 0px 12px;
   font-size: 12px;
   line-height: 30px;
   text-align: center;

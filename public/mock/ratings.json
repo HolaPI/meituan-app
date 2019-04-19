@@ -13,7 +13,8 @@
 				"comment_score_type": 1,
 				"total_count": 3428,
 				"comment_score_title": "好评"
-			}, {
+			},
+			{
 				"comment_score_type": 3,
 				"total_count": 180,
 				"comment_score_title": "差评"
@@ -74,7 +75,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "ejX309524666",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -115,7 +117,8 @@
 						"spu_id": 96985579,
 						"sku_id": 102106880,
 						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985579&wmpoiid=495579&sputag=&activitytag=&sku_id=102106880"
-					}, {
+					},
+					{
 						"keyword": "奶油坚果酱中套餐",
 						"spu_id": 272461108,
 						"sku_id": 297102924,
@@ -135,7 +138,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "匿名用户",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -176,7 +180,8 @@
 						"spu_id": 438902255,
 						"sku_id": 479330905,
 						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=438902255&wmpoiid=495579&sputag=&activitytag=&sku_id=479330905"
-					}, {
+					},
+					{
 						"keyword": "经典麦辣鸡腿汉堡",
 						"spu_id": 96985052,
 						"sku_id": 102106347,
@@ -196,7 +201,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "GDq177157764",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -234,10 +240,12 @@
 					{
 						"name": "经典麦辣鸡腿汉堡中薯套餐",
 						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=151783280&wmpoiid=495579&sputag=&activitytag=&sku_id=162401545"
-					}, {
+					},
+					{
 						"name": "麦辣鸡翅4块",
 						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985585&wmpoiid=495579&sputag=&activitytag=&sku_id=102106877"
-					}, {
+					},
+					{
 						"name": "可口可乐（大杯）",
 						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985058&wmpoiid=495579&sputag=&activitytag=&sku_id=102106353"
 					}
@@ -248,7 +256,8 @@
 						"spu_id": 384709076,
 						"sku_id": 420499566,
 						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=384709076&wmpoiid=495579&sputag=&activitytag=&sku_id=420499566"
-					}, {
+					},
+					{
 						"keyword": "麦辣鸡翅4块",
 						"spu_id": 96985585,
 						"sku_id": 102106877,
@@ -268,7 +277,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "匿名用户",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -324,7 +334,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "匿名用户",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -385,7 +396,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "Lauhiukwan",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -434,7 +446,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "Ggj331055125",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -472,7 +485,8 @@
 					{
 						"name": "霆锋酷辣鸡腿堡配中薯套餐",
 						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=438905783&wmpoiid=495579&sputag=&activitytag=&sku_id=479337665"
-					}, {
+					},
+					{
 						"name": "麦旋风奥利奥原味（鸳鸯奶茶味）",
 						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=438863568&wmpoiid=495579&sputag=&activitytag=&sku_id=479294637"
 					}
@@ -491,7 +505,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "liaokun0",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -540,7 +555,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "WfU359676754",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -589,7 +605,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "EFR962754963",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -627,7 +644,8 @@
 					{
 						"name": "经典麦辣鸡腿汉堡",
 						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985052&wmpoiid=495579&sputag=&activitytag=&sku_id=102106347"
-					}, {
+					},
+					{
 						"name": "麦乐鸡5块",
 						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985580&wmpoiid=495579&sputag=&activitytag=&sku_id=102106872"
 					}
@@ -646,7 +664,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "XVw495912307",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -695,7 +714,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "aVh453271553",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -733,10 +753,12 @@
 					{
 						"name": "麦辣鸡翅4块",
 						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985585&wmpoiid=495579&sputag=&activitytag=&sku_id=102106877"
-					}, {
+					},
+					{
 						"name": "零度可口可乐（小杯）",
 						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985573&wmpoiid=495579&sputag=&activitytag=&sku_id=102106868"
-					}, {
+					},
+					{
 						"name": "经典麦辣鸡腿汉堡",
 						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985052&wmpoiid=495579&sputag=&activitytag=&sku_id=102106347"
 					}
@@ -755,7 +777,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "jTW196820955",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -801,7 +824,8 @@
 						"spu_id": 96985580,
 						"sku_id": 102106872,
 						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985580&wmpoiid=495579&sputag=&activitytag=&sku_id=102106872"
-					}, {
+					},
+					{
 						"keyword": "薯条（大）",
 						"spu_id": 96985584,
 						"sku_id": 102106878,
@@ -821,7 +845,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "kfW507727981",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -870,7 +895,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "qPm254992924",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -926,7 +952,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "rDJ901569961",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -982,7 +1009,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "GPf593897695",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -1031,7 +1059,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "朱秋如",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -1080,7 +1109,8 @@
 				"is_dp": 0,
 				"share_info": null,
 				"user_type": 0
-			}, {
+			},
+			{
 				"user_name": "h菜丸子",
 				"ship_score": 0,
 				"ship_time": 0,
@@ -1137,27 +1167,32 @@
 				"content": "味道赞",
 				"label_count": 45,
 				"label_star": 5
-			}, {
+			},
+			{
 				"label_id": 39,
 				"content": "服务好",
 				"label_count": 20,
 				"label_star": 5
-			}, {
+			},
+			{
 				"label_id": 34,
 				"content": "满意",
 				"label_count": 11,
 				"label_star": 5
-			}, {
+			},
+			{
 				"label_id": 38,
 				"content": "少送错送",
 				"label_count": 5,
 				"label_star": 0
-			}, {
+			},
+			{
 				"label_id": 62,
 				"content": "贵",
 				"label_count": 4,
 				"label_star": 0
-			}, {
+			},
+			{
 				"label_id": 80,
 				"content": "早餐",
 				"label_count": 3,
@@ -1186,11 +1221,13 @@
 				"comment_score_type": 0,
 				"total_count": 3683,
 				"comment_score_title": "全部"
-			}, {
+			},
+			{
 				"comment_score_type": 5,
 				"total_count": 50,
 				"comment_score_title": "有图"
-			}, {
+			},
+			{
 				"comment_score_type": 21,
 				"total_count": 51,
 				"comment_score_title": "点评(3.5分)"

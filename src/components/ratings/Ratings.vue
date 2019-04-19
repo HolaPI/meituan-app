@@ -8,12 +8,12 @@
             <p class="text">商家评分</p>
           </div>
           <div class="other-score">
-            <div class="quality-score item">
+            <div class="quality-score item" v-show="ratings.food_score">
               <span class="text">口味</span>
               <app-star :score="ratings.food_score" class="star"></app-star>
               <span class="score">{{ratings.food_score}}</span>
             </div>
-            <div class="pack-score">
+            <div class="pack-score" v-show="ratings.pack_score">
               <span class="text">包装</span>
               <app-star :score="ratings.pack_score" class="star"></app-star>
               <span class="score">{{ratings.pack_score}}</span>
@@ -69,6 +69,15 @@
                 <app-star :score="comment.order_comment_score"></app-star>
               </div>
               <div class="c_content">{{comment.comment}}</div>
+              <div class="img-wrapper" v-if="comment.comment_pics.length > 0">
+                <div
+                  :class="{'multiPics': comment.comment_pics.length > 1}"
+                  v-for="(pic, index) in comment.comment_pics"
+                  :key="index"
+                >
+                  <img :src="pic.url">
+                </div>
+              </div>
             </div>
           </li>
         </ul>
@@ -89,7 +98,7 @@ export default {
   data() {
     return {
       ratings: {},
-      //set type "ALL" initially, or occurs errors
+      //set type "ALL" initially, or errors occur
       selectType: ALL
     };
   },
@@ -445,7 +454,33 @@ export default {
   margin-top: 9px;
   float: left;
 }
-
+.ratings
+  .ratings-wrapper
+  .content
+  .rating-list
+  .comment-item
+  .comment-main
+  .img-wrapper
+  div {
+  display: inline-block;
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+}
+.ratings
+  .ratings-wrapper
+  .content
+  .rating-list
+  .comment-item
+  .comment-main
+  .img-wrapper
+  div.multiPics {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin: 0 5px 5px 0;
+  overflow: hidden;
+}
 .ratings
   .ratings-wrapper
   .content
@@ -454,6 +489,6 @@ export default {
   .comment-main
   .img-wrapper
   img {
-  width: 175px;
+  width: 100%;
 }
 </style>

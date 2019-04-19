@@ -192,7 +192,7 @@ export default {
 .seller .seller-wrapper .other-view .server-wrapper {
   background: url("./img/server.png") no-repeat left center;
   background-size: 15px 15px;
-  padding: 15px 0 17px 25px;
+  padding: 15px 0px 15px 25px;
   font-size: 14px;
   border-bottom: 1px solid #f4f4f4;
 }

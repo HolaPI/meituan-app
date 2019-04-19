@@ -1,7 +1,7 @@
 <template>
   <div class="nav">
     <router-link to="/goods" class="nav-item">
-      点餐
+      菜单
       <i class="line"></i>
     </router-link>
     <router-link to="/ratings" class="nav-item">
