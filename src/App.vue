@@ -8,8 +8,6 @@
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
-    <!-- content -->
-    <!-- <app-content></app-content> -->
   </div>
 </template>
 

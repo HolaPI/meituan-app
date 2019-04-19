@@ -148,7 +148,6 @@ export default {
 .header .top-wrapper .search-wrapper {
   width: 100%;
   height: 31px;
-  /* background: pink; */
   padding: 0 104px 0 50px;
   box-sizing: border-box;
 }
@@ -172,7 +171,6 @@ export default {
 .header .top-wrapper .more-wrapper {
   width: 65px;
   height: 24px;
-  /* background: #ffbb22; */
   position: absolute;
   right: 0;
   top: 0;
@@ -271,6 +269,22 @@ export default {
   float: left;
   line-height: 16px;
 }
+
+/* @media screen and (min-width: 320px) {
+  .header .bulletin-wrapper .text {
+    width: calc();
+    font-size: 11px;
+    color: #fff;
+    float: left;
+    line-height: 16px;
+    
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+} */
+
 .header .bulletin-wrapper .detail {
   color: #fff;
   float: right;

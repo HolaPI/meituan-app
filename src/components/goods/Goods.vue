@@ -111,7 +111,6 @@ export default {
       //listen foodscroll scorll-event
       this.foodScroll.on("scroll", pos => {
         this.scrollY = Math.abs(Math.round(pos.y));
-        // console.log(this.scrollY);
       });
     },
     calculateHeight() {
@@ -214,7 +213,6 @@ export default {
 }
 .goods .foods-wrapper {
   flex: 1;
-  /* background: blue; */
 }
 .goods .menu-wrapper .menu-item {
   padding: 16px 23px 15px 10px;
@@ -317,7 +315,7 @@ export default {
 .goods .menu-wrapper .menu-item.current {
   background: white;
   font-weight: bold;
-  margin-top: -1px;
+  margin-top: 1px;
 }
 .goods .menu-wrapper .menu-item:first-child.current {
   margin-top: 1px;

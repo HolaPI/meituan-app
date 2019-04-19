@@ -54,7 +54,7 @@
             v-for="(item, index) in ratings.labels"
             :key="index"
             :class="{'highlight': item.label_star > 0}"
-          >{{item.content}}{{item.label_count}}</span>
+          >{{item.content}}&nbsp;{{item.label_count}}</span>
         </div>
         <ul class="rating-list">
           <li class="comment-item" v-for="(comment, index) in selectComments" :key="index">
