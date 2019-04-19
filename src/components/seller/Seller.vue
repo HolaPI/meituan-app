@@ -83,12 +83,12 @@ export default {
           } else {
             this.scrollY.refresh();
           }
-          if (this.seller.poi_env_thumbnails_url_list) {
+          if (this.seller.poi_env.thumbnails_url_list) {
             let imgWidth = this.$refs.picsItem[0].clientWidth;
             let marginRight = 11;
             let totalWidth =
               (imgWidth + marginRight) *
-              this.seller.poi_env_thumbnails_url_list.length;
+              this.seller.poi_env.thumbnails_url_list.length;
             console.log(totalWidth);
             this.$refs.picsList.style.width = totalWidth + "px";
             this.scrollX_pics = new BScroll(this.$refs.picsView, {
