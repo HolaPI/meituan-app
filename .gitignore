@@ -2,7 +2,6 @@
 node_modules
 /dist
 mt-app
-data
 
 # local env files
 .env.local

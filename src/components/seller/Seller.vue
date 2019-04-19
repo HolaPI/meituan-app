@@ -89,7 +89,6 @@ export default {
             let totalWidth =
               (imgWidth + marginRight) *
               this.seller.poi_env.thumbnails_url_list.length;
-            console.log(totalWidth);
             this.$refs.picsList.style.width = totalWidth + "px";
             this.scrollX_pics = new BScroll(this.$refs.picsView, {
               scrollX: true
