@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="header">
     <!-- {{poiInfo.name}} -->
     <!-- top-wrapper -->
